@@ -1,3 +1,6 @@
+#!/bin/bash
+# Thanks to http://mywiki.wooledge.org/BashFAQ & the guys on #bash Freenode IRC
+
 shopt -s globstar
 opwd=$(pwd)
 exists() { [[ -e $1 ]]; }

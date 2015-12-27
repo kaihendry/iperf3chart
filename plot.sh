@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# Grateful for the answers on http://stackoverflow.com/questions/34447348
 shopt -s nullglob
 
 echo \$data \<\<EOD
