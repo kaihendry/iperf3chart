@@ -6,10 +6,10 @@ shopt -s nullglob
 echo \$data \<\<EOD
 for j in *.json
 do
-	dt=$(basename $j .json)
-	sent=$(jq '.end.sum_sent.bits_per_second / 8' < $j)
-	received=$(jq '.end.sum_received.bits_per_second / 8' < $j)
-	echo $dt $sent $received
+	dt=$(basename "$j" .json)
+	sent=$(jq '.end.sum_sent.bits_per_second / 8' < "$j")
+	received=$(jq '.end.sum_received.bits_per_second / 8' < "$j")
+	echo "$dt" "$sent" "$received"
 done
 echo EOD
 
