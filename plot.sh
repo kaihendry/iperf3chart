@@ -7,6 +7,12 @@ echo \$data \<\<EOD
 for j in *.json
 do
 	dt=$(basename "$j" .json)
+	if jq -e '.error' < $j
+	then
+		echo $(readlink -f $j) has an error, skipping >&2
+		cat $j >&2
+		continue
+	fi
 	sent=$(jq '.end.sum_sent.bits_per_second / 8' < "$j")
 	received=$(jq '.end.sum_received.bits_per_second / 8' < "$j")
 	echo "$dt" "$sent" "$received"

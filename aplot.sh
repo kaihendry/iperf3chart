@@ -10,6 +10,7 @@ do
 	cd "$i" || continue
 	if exists ./*.json
 	then
+		echo Processing directory $i
 		svg=$(echo "${i%/}" | tr / _).svg
 		"$opwd"/plot.sh | gnuplot > "$opwd"/"$svg"
 	fi
