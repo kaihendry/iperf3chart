@@ -12,7 +12,7 @@ do
 	then
 		echo Processing directory $i
 		svg=$(echo "${i%/}" | tr / _).svg
-		test -f "$opwd"/"$svg" ||
+		test -s "$opwd"/"$svg" ||
 		"$opwd"/plot.sh | gnuplot > "$opwd"/"$svg"
 	fi
 	cd "$opwd" || exit
